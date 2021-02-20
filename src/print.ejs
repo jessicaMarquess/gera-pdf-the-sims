@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goth Family - The Sims 4</title>
+
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        table{
+            width: 100%;
+        }
+        th{
+            text-align: left;
+        }
+        body{
+            background-image: url("https://img.icons8.com/color/1600/the-sims.png") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-y: 100px;
+        }
+    </style>
+
+</head>
+<body class="bg-green-500">
+    <div class="m-10 object-center">
+            <h1 class="text-5xl mb-8">Members Goth Family</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Life State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (gothFamily.length > 0) { %>
+                    <% gothFamily.forEach(member => { %>
+                        <tr>
+                            <td><%= member.name %></td>
+                            <td><%= member.age %></td>
+                            <td><%= member.lifeState %></td>
+                        </tr>
+                    <%  }); %>
+                <% } %>
+                </tbody>
+            <tfoot>
+                <tr><td colspan="2" class="text-xl"><%= gothFamily.length %> members </td></tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
